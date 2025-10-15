@@ -1,22 +1,26 @@
-# AML Reset Password - Página Simple
+# 🔐 AML Reset Password - Vercel
 
-## 🎯 Qué hace:
+Página simple para manejar los links de recuperación de contraseña de la app AML.
 
-Esta página recibe un link tipo:
+---
+
+## 🎯 ¿Qué hace?
+
+Recibe links del email tipo:
 ```
-https://tu-url.vercel.app/reset-password?token=XXX
+https://tu-vercel.vercel.app/reset-password?token=ABC123
 ```
 
-Y automáticamente intenta abrir la app con:
+Y automáticamente intenta abrir la app:
 ```
-amlmovil://reset-password?token=XXX
+amlmovil://reset-password?token=ABC123
 ```
 
 ---
 
-## 🚀 Deploy en Vercel:
+## 🚀 Deploy en Vercel
 
-Ya está conectado con GitHub. Solo hacé:
+**Ya está conectado con GitHub** - Auto-deploy cada push.
 
 ```bash
 git add .
@@ -24,23 +28,35 @@ git commit -m "Update"
 git push
 ```
 
-Vercel hace auto-deploy 🎉
+---
+
+## 📁 Estructura:
+
+```
+vercel-reset-password/
+├── public/
+│   ├── index.html              ← Página principal
+│   └── .well-known/            ← Universal Links (para después)
+│       ├── apple-app-site-association
+│       └── assetlinks.json
+├── vercel.json                 ← Config Vercel
+└── package.json
+```
 
 ---
 
-## ✅ Cómo probar:
+## 📖 Documentación:
 
-1. Deployar en Vercel
-2. Obtener tu URL (ej: `https://aml-link-univ.vercel.app`)
-3. Actualizar backend con esa URL
-4. Solicitar reset password
-5. Abrir el email en el celular
-6. Tocar el link → Debería abrir la app
+- **`COMO_USAR.md`** → Pasos para usar después del deploy
+- **`DESPUES_DEL_DEPLOY.md`** → Checklist post-deploy
 
 ---
 
-## 📝 Próximos pasos (cuando funcione):
+## ✅ Próximos pasos:
 
-- Agregar archivos `.well-known` para Universal Links
-- Mejorar la página fallback
-- Agregar links a App Store / Play Store
+1. Push a GitHub
+2. Vercel auto-deploya
+3. Actualizar backend con tu URL de Vercel
+4. ¡Probar!
+
+**Lee `COMO_USAR.md` para instrucciones detalladas** 📄
