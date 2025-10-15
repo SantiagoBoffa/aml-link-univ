@@ -1,26 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/reset-password",
-      "dest": "/public/index.html"
-    },
-    {
-      "src": "/.well-known/(.*)",
-      "dest": "/public/.well-known/$1",
-      "headers": {
-        "Content-Type": "application/json"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
+  "rewrites": [
+    { "source": "/reset-password", "destination": "/index.html" }
   ]
 }
